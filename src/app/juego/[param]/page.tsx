@@ -15,7 +15,7 @@ export default function JuegoPage({
 	else if (param == "tactil") game = 3;
 	else if (param == "emociones") game = 4;
 
-	const play = mod[game];
+	const play = mod[game - 1];
 
 	return (
 		<main className="p-6 max-w-xl mx-auto">
