@@ -1,12 +1,14 @@
 // src/app/juego/[param]/page.tsx
-import Image from "next/image";
+import { use } from "react";
 import Link from "next/link";
 import { mod } from "../../../data/bigdata";
 
-type Props = { params: { param: string } };
-
-export default function JuegoPage({ params: { param } }: Props) {
-	// Construye la clave de búsqueda según el parámetro de ruta
+export default function Page({
+	params,
+}: {
+	params: Promise<{ param: string }>;
+}) {
+	const { param } = use(params);
 	const key = `juego/${param}`;
 	const juego = mod.find((m) => m.link === key);
 
