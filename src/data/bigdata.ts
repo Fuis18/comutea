@@ -1,26 +1,27 @@
+// src/data/bigdata.ts
 export const mod = [
 	{
-		name: "Estimulación Visual",
-		link: "juego/visual",
-		img: "/imgs/cubo-1.png",
-		score: "80",
+		name: "Ampliación de Vocabulario",
+		link: "juego/vocabulario",
+		img: "/imgs/vocabulario.png",
+		score: "10",
 	},
 	{
-		name: "Estimulación Auditiva",
-		link: "juego/auditiva",
-		img: "/imgs/cubo-2.png",
-		score: "65",
+		name: "Interacción Social",
+		link: "juego/interaccion",
+		img: "/imgs/interaccion.png",
+		score: "23",
 	},
 	{
-		name: "Texturas Táctiles",
-		link: "juego/tactil",
-		img: "/imgs/cubo-3.png",
-		score: "70",
-	},
-	{
-		name: "Reconocimiento de Emociones",
+		name: "Comprensión de Emociones",
 		link: "juego/emociones",
-		img: "/imgs/cubo-4.png",
-		score: "55",
+		img: "/imgs/emociones.png",
+		score: "58",
+	},
+	{
+		name: "Apoyo Pedagógico",
+		link: "juego/apoyo",
+		img: "/imgs/apoyo.png",
+		score: "26",
 	},
 ];

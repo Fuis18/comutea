@@ -1,36 +1,41 @@
-import { use } from "react";
+// src/app/juego/[param]/page.tsx
+import Image from "next/image";
+import Link from "next/link";
 import { mod } from "../../../data/bigdata";
 
-export default function JuegoPage({
-	params,
-}: {
-	params: Promise<{ param: string }>;
-}) {
-	const { param } = use(params);
+type Props = { params: { param: string } };
 
-	let game = 0;
+export default function JuegoPage({ params: { param } }: Props) {
+	// Construye la clave de búsqueda según el parámetro de ruta
+	const key = `juego/${param}`;
+	const juego = mod.find((m) => m.link === key);
 
-	if (param == "visual") game = 1;
-	else if (param == "auditiva") game = 2;
-	else if (param == "tactil") game = 3;
-	else if (param == "emociones") game = 4;
-
-	const play = mod[game - 1];
+	if (!juego) {
+		return (
+			<main className="p-6 max-w-xl mx-auto">
+				<h2 className="text-xl font-bold mb-4">Módulo no encontrado</h2>
+				<p className="text-gray-600">El módulo solicitado no existe.</p>
+				<Link href="/" className="mt-4 inline-block text-blue-500">
+					Volver al inicio
+				</Link>
+			</main>
+		);
+	}
 
 	return (
 		<main className="p-6 max-w-xl mx-auto">
-			<h2 className="text-xl font-bold mb-4">{play.name}</h2>
+			<h2 className="text-xl font-bold mb-4">{juego.name}</h2>
 
 			<div className="bg-white p-4 rounded shadow mb-6">
 				<p className="text-gray-700 text-lg">Progreso actual:</p>
 				<div className="w-full bg-gray-200 rounded-full h-4 mt-2">
 					<div
 						className="bg-blue-500 h-4 rounded-full"
-						style={{ width: `${play.score}%` }}
-					></div>
+						style={{ width: `${juego.score}%` }}
+					/>
 				</div>
 				<p className="text-sm text-gray-600 mt-2">
-					Puntuación: {play.score}%
+					Puntuación: {juego.score}%
 				</p>
 			</div>
 
