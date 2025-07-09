@@ -3,18 +3,22 @@ import Link from "next/link";
 export default function Header() {
 	return (
 		<header>
-			<nav className="bg-gray-200">
-				<Link href="/">Juegos</Link>
-				<Link href="/reportes">Reportes</Link>
+			<nav className="nav__link">
+				<Link className="nav__cell" href="/">
+					Juegos
+				</Link>
+				<Link className="nav__cell" href="/reportes">
+					Reportes
+				</Link>
 			</nav>
-			<div className="flex justify-end">
-				<Link href="/login" className="px-4 py-1 bg-gray-200">
+			<nav className="nav__icon">
+				<Link className="nav__cell" href="/login">
 					👤
 				</Link>
-				<Link href="/configuracion" className="px-4 py-1 bg-gray-200">
+				<Link className="nav__cell" href="/configuracion">
 					⚙️
 				</Link>
-			</div>
+			</nav>
 		</header>
 	);
 }

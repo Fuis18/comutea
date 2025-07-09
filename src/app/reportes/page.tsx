@@ -1,24 +1,34 @@
+// src/app/reportes/page.tsx
+"use client";
+
 import Image from "next/image";
-import { mod } from "../../data/bigdata";
+import { useEffect, useState } from "react";
+import { getModulos, Modulo } from "@/data/bigdata";
 
 export default function ReportesPage() {
+	const [mods, setMods] = useState<Modulo[]>([]);
+
+	useEffect(() => {
+		setMods(getModulos());
+	}, []);
+
 	return (
 		<main className="p-4">
 			<h2 className="text-xl font-bold mb-4">Reportes</h2>
 			<div className="game-container">
-				{mod.map((game, index) => (
-					<div key={index} className="games">
+				{mods.map((m, i) => (
+					<div key={i} className="games">
 						<Image
-							src={game.img}
-							alt={game.name}
+							src={m.img}
+							alt={m.name}
 							width={130}
 							height={150}
 						/>
 						<h3 className="text-center mt-2 font-semibold">
-							{game.name}
+							{m.name}
 						</h3>
-						<p className="text-center text-gray-600">
-							Puntuación: {game.score}
+						<p className="text-center text-gray-600 text-2xl">
+							{m.score}%
 						</p>
 					</div>
 				))}
