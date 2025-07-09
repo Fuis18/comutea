@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function LoginPage() {
 	return (
-		<div className="flex items-center justify-center h-screen">
+		<div className="login">
 			<form className="bg-white p-6 rounded-xl shadow-md w-full max-w-sm">
 				<h1 className="text-xl font-bold mb-4">Iniciar Sesión</h1>
 				<input

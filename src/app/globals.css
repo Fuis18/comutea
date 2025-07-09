@@ -70,3 +70,8 @@ nav {
 	background-color: #fcc;
 	border: 1px solid #f99;
 }
+
+.login {
+	height: calc(100vh - 40px);
+	@apply flex items-center justify-center;
+}
