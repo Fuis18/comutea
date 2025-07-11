@@ -101,7 +101,7 @@ export default function VocabularioGame() {
 					<button
 						key={i}
 						onClick={() => verificar(op)}
-						className="py-2 bg-blue-200 rounded hover:bg-blue-400 transition cursor-pointer"
+						className="buttongame"
 					>
 						{op}
 					</button>

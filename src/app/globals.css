@@ -1,4 +1,10 @@
 @import "tailwindcss";
+
+body {
+	background-image: url("/img/background.jpg");
+	background-size: cover;
+}
+
 header {
 	display: grid;
 	grid-template-columns: 1fr min-content;
@@ -10,6 +16,11 @@ header {
 nav {
 	height: 100%;
 }
+.buttongame {
+	box-shadow: 1px 1px 5px #69a;
+	@apply py-2 bg-blue-200 rounded hover:bg-blue-400 transition cursor-pointer;
+}
+
 .nav__link {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
