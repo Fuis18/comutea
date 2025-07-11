@@ -15,7 +15,7 @@ export default function HomePage() {
 
 	return (
 		<main className="p-6 max-w-3xl mx-auto">
-			<h1 className="text-2xl font-extrabold mb-4">COMU-TEA</h1>
+			<h1 className="text-2xl font-extrabold mb-4">COMUNIKIDS</h1>
 			<section>
 				<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 					{mods.map((game, idx) => (
